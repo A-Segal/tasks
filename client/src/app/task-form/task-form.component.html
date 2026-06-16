@@ -1,0 +1,43 @@
+
+
+
+
+<form [formGroup]="taskForm"  class="task-form">
+  <label> 
+    <span  class="label" [innerText]="'שם'"></span>
+    <input formControlName="name" placeholder="הכנס שם למשימה" />
+  </label>
+
+  <label>
+     <span  class="label" [innerText]="'תאור'"></span>
+    <textarea formControlName="description"
+     placeholder="הכנס תאור למשימה" ></textarea>
+  </label>
+
+  <label>
+     <span  class="label" [innerText]="'מחיר'"></span>
+    <input type="number" formControlName="price" placeholder="הכנס מחיר למשימה" />
+  </label>
+
+  
+     
+  <mat-form-field appearance="fill" dir="rtl">
+  <mat-label>בחר תאריך יעד</mat-label>
+  <input matInput [matDatepicker]="picker"  formControlName="scheduling">
+  
+
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+</mat-form-field>
+ 
+
+
+  <app-status  formControlName="status" [canChangeStatus]="!isNew"></app-status>
+ 
+   <div class="buttons">
+    <button [disabled]="taskForm.invalid" (click)="save()" 
+    [innerText]="buttonText()"></button>
+    
+    <button  (click)="cancel()">בטל</button>
+  </div>
+</form>

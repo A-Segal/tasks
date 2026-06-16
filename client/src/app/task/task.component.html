@@ -1,0 +1,14 @@
+<div class="div" appoverhilight> 
+         <div class="smalldiv" [innerText]="task.taskId"></div>
+
+        <div class="smalldiv" [innerText]="task.status | hebrew"></div>
+        <div class="smalldiv" [innerText]="task.name" ></div>
+        <div class="smalldiv" [innerText]="task.scheduling"></div>
+        <div class="smalldiv" [innerText]="task.price | currency:'ILS' :'symbol':'1.0-0'"></div>
+        
+        <div>
+         
+        
+        <div><ng-content select="[end]"></ng-content>
+
+    </div>

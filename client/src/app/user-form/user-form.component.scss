@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+form {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 18px;
+  border: solid rgb(25, 102, 165) 6px;
+  background-color: rgb(12, 202, 193);
+  border-radius: 14px;
+}
+label {
+  display: block;
+  font-family: Segoe Print;
+  font-size: 24px;
+  color: rgb(25, 102, 165);
+  margin-bottom: 8px;
+}
+
+input,
+textarea,
+.mat-form-field {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 96px;
+}
+
+div {
+  margin-bottom: 14px;
+}
+
+button {
+  color: rgb(255, 255, 255);
+  width: 100px;
+  height: 36px;
+  font-size: 18px;
+  border-radius: 20px;
+  background-color: rgb(25, 102, 165);
+  border: none;
+  cursor: pointer;
+}
+
+
+

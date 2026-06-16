@@ -1,0 +1,40 @@
+ 
+      <button class="header-action-btn"
+           
+          
+          (click)="addUser()"
+        >
+    הוסף משתמש
+  </button>
+
+    <mat-table [dataSource]="usersList || []" class="mat-table custom-table">
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column">
+            <mat-header-cell *matHeaderCellDef class="column" [class]="column + '-column'">
+                <span [innerText]="column "></span>
+            </mat-header-cell>
+          
+                <mat-cell *matCellDef="let element"  class="column" [class]="column + '-column'">
+                    @if(column === 'roleId'){
+                       <span [innerText]="element[column] "></span>
+                    }
+                    @if(column !== 'roleId' && !iconColumns.includes(column)){
+                        <span [innerText]="element[column]"></span>
+                     }
+                  
+                     @if(column === 'delete'){
+                        <button class="delete"  [disabled]="user.roleId !== theRole.manager"
+                        (click)="deleteUser(element)">
+                                <mat-icon>delete</mat-icon>
+                     </button>
+                       
+                     }
+                </mat-cell>
+           
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columns;"></mat-row> 
+ 
+    
+    </mat-table>
+ 

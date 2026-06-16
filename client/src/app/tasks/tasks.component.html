@@ -1,0 +1,29 @@
+
+    <div class="container" *ngIf="(tasksList$ | async) as taskslist; else message">
+
+<header >
+  <button  class="butt" [innerText]="viewState=== theStateEnum.Table?'לוח משימות':'טבלה'" (click)="changeState()"></button>
+<select name="kind"  [(ngModel)]="selectedstatus">
+        <option  [value]="-1">{{ theStatusEnum.all | hebrew}}</option>
+        <option  [value]="0">{{ theStatusEnum.pending | hebrew}}</option>
+        <option  [value]="1">{{ theStatusEnum.process | hebrew}}</option>
+        <option  [value]="2">{{ theStatusEnum.completed | hebrew}}</option>
+        <option  [value]="3">{{ theStatusEnum.cancel | hebrew}}</option>
+        
+  </select>
+  <button class="butt" (click)="addTask()"> הוסף משימה</button>
+</header>
+<div *ngIf="viewState===theStateEnum.Dashboard">
+
+    <app-tasks-dashboard [taskslist]="taskslist | filterstatus:selectedstatus"></app-tasks-dashboard>
+     
+</div>
+<div *ngIf="viewState===theStateEnum.Table">
+
+<app-tasks-table [taskslist]="taskslist | filterstatus:selectedstatus" (afterUpdate)="loadTasks()"></app-tasks-table>
+  </div>
+    </div> 
+<ng-template #message class="error"> 
+  <h1 [innerText]="errorMessage"></h1>
+  <img [src]="errorSrc"/>
+</ng-template>

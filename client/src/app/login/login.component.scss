@@ -1,0 +1,203 @@
+// :host{
+    
+// input{
+//     border-radius: 10px;
+//     border-color: rgb(25, 102, 165);
+//     display: block;
+//     margin: 10px;
+//     font-size: 20px;
+//     height: 40px;
+//   width:500px
+  
+  
+// }
+// label{
+//     font-family: Segoe Print;
+//     font-size: 40px;
+//  display: block;
+ 
+//  color:rgb(25, 102, 165);
+// }
+
+// .alldiv{
+    
+    
+//     border-radius: 50px;
+//     background-color: rgb(12, 202, 193);
+// ;
+//     border: 6px, solid, rgb(25, 102, 165);
+    
+//     width: 35vw;
+//     height: 50vh;
+   
+//    margin-top: 200px;
+//   margin-left: 550px;
+   
+// }
+// .form{
+//     align-items: center;
+// }
+// button{
+//     margin-top: 50px;
+//     margin-left: 100px;
+//     font-family: Segoe Print;
+//     font-size: 25px;
+//     color: rgb(255, 255, 255);
+//     width: 400px;
+//     height: 50px;
+//     background-color:  rgb(25, 102, 165);
+//     border-radius: 12px;
+//     border-color: rgb(12, 202, 193)
+    
+   
+    
+    
+// }
+
+// button:hover{
+//     background-color:  rgb(25, 102, 165);
+    
+// }
+// button:disabled{
+//     background-color: darkgray;
+//     cursor:not-allowed
+    
+// }
+// .error{
+   
+//     color: rgb(25, 102, 165);
+//      font-size: 20px;
+//     font-family: Segoe Print;
+// }
+// .labelinput{
+//     height: 16vh;
+// }
+// }
+
+
+
+:host {
+  display: block;
+  min-height: 100vh;
+
+  /* אותו רקע של HOME */
+  background: linear-gradient(
+    -45deg,
+    rgb(5, 20, 35),
+    rgb(15, 70, 120),
+    rgb(20, 90, 140),
+    rgb(70, 170, 170)
+  );
+
+  background-size: 400% 400%;
+  animation: bgMove 18s ease infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* הקופסה של הטופס */
+.alldiv {
+  border-radius: 30px;
+
+  /* glass effect כמו home */
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(93, 206, 200, 0.25);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 0 30px rgba(15, 70, 120, 0.3),
+    0 0 80px rgba(70, 170, 170, 0.15);
+
+  width: 420px;
+  height: auto;
+
+  padding: 40px;
+
+  text-align: center;
+}
+
+/* input */
+input {
+  border-radius: 12px;
+  border: 2px solid rgb(25, 102, 165);
+
+  display: block;
+
+  margin: 12px auto;
+
+  font-size: 18px;
+
+  height: 45px;
+  width: 100%;
+
+  padding: 8px;
+
+  background: rgba(255,255,255,0.9);
+}
+
+/* label */
+label {
+  font-family: Segoe Print;
+  font-size: 28px;
+
+  display: block;
+
+  color: rgb(93, 206, 200);
+
+  margin-bottom: 10px;
+}
+
+/* button */
+button {
+  margin-top: 25px;
+
+  font-family: Segoe Print;
+  font-size: 20px;
+
+  color: white;
+
+  width: 100%;
+  height: 50px;
+
+  background: linear-gradient(
+    135deg,
+    rgb(15, 70, 120),
+    rgb(70, 170, 170)
+  );
+
+  border-radius: 12px;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15,70,120,0.4);
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* error */
+.error {
+  color: rgb(93, 206, 200);
+  font-size: 16px;
+  font-family: Segoe Print;
+}
+
+/* animation */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

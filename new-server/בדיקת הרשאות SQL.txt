@@ -1,0 +1,1 @@
+sqlcmd -S localhost -U nodeJS -P nodeJS -d TasksDB

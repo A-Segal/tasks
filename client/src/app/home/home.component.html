@@ -1,0 +1,60 @@
+<!-- 
+
+<header class="head">
+    <img [src]="hd.img" >
+    <div [innerText]="hd.name" class="divclass"></div>
+    
+    
+</header>
+<section >
+<button  (click)="click()" class="butt">rule</button> 
+<button (click)="click2()"  class="butt">phon</button>
+<button (click)="click3()" class="butt" >Korot chaim </button>
+<button (click)="click4()" class="butt" >restart</button>  
+<button (click)="gotoTasks()" class="butt"> לצפייה בפרוייקט</button>
+<div [innerText]="hd.text" class="divclass"></div>
+</section>
+
+<footer >
+<div [innerText]="hd.phon"></div>
+
+</footer> -->
+
+
+<div class="hero-section">
+
+  <div class="glass-card">
+
+    <div class="email-circle">
+      <span>{{ email }}</span>
+    </div>
+
+    <h1 class="title">{{ hd.name }}</h1>
+
+    <div class="buttons">
+      <button (click)="setName()" class="btn">👩‍💻 מי אני</button>
+      <button (click)="showPhone()" class="btn">📞 טלפון</button>
+      <button (click)="showSkills()" class="btn">📄 כישורים</button>
+      <button (click)="resetInfo()" class="btn">🔄 איפוס</button>
+      <button (click)="gotoTasks()" class="btn project">🚀 צפייה בפרוייקט</button>
+    </div>
+
+    <div class="info-card" *ngIf="hd.text">
+      <h3>יכולות</h3>
+      <p>{{ hd.text }}</p>
+    </div>
+
+    <div class="phone-card" *ngIf="hd.phon">
+      <h3>יצירת קשר</h3>
+      <p>{{ hd.phon }}</p>
+    </div>
+
+    <div class="signature-container">
+      <div class="signature">
+        Aidy Segal Fullstack Developer
+      </div>
+    </div>
+
+  </div>
+
+</div>

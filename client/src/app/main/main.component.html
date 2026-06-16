@@ -1,0 +1,34 @@
+<header >
+
+    <nav>
+  <ul>
+        <app-user></app-user>
+
+    @for(button of buttons; track button;) {
+      <li>
+        <a class="active"
+           [ngClass]="{'disabled': button.disabled}"
+           [innerText]="button.name"
+           (click)="navigate(button.value)"
+           routerLink=""
+           routerLinkActive="active">
+        </a>
+      </li>
+    }
+    <li>
+      <button [innerText]="'החלף משתמש'"
+              class="change-user-btn"
+              (click)="changeUser()"
+              [disabled]="!isServerAlive"></button>
+    </li>
+  </ul>
+</nav>
+  <div class="small" *ngIf="isServerAlive === null">בודק מצב שרת...</div>
+  <div class="server" *ngIf="isServerAlive === true" style="color: green;">✅ השרת פעיל</div>
+  <div class="server" *ngIf="isServerAlive === false" style="color: red;">❌ השרת אינו פעיל</div>
+   
+
+</header>
+<app-chat></app-chat>
+
+<router-outlet></router-outlet>

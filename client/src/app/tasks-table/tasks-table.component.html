@@ -1,0 +1,36 @@
+    <mat-table [dataSource]="taskslist" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column">
+        <mat-header-cell *matHeaderCellDef>
+            <span [innerText]="column"></span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            @if(column === 'status'){
+            <span [innerText]="element[column] | hebrew"></span>
+                         
+            }
+             @else if(column === 'price'){
+            <span [innerText]="element[column] | currency:'ILS' :'symbol':'1.0-0'"></span>
+                         
+            }
+             @else if(column === 'update'){
+                        <mat-icon (click)="updateTask(element)" >update</mat-icon>  
+                     }
+            @else{
+            <span [innerText]="element[column]"></span>
+            }
+             @if(column === 'delete'){
+                        <mat-icon  (click)="deleteTask(element)">delete</mat-icon>  
+                     }
+        </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;" appoverhilight [color]="'rgb(12, 202, 193)'"></mat-row>
+</mat-table>
+
+
+
+
+
+
+
+

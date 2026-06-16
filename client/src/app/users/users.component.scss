@@ -1,0 +1,158 @@
+:host{
+
+  .mat-table-wrapper {
+    position: relative; /* מאפשר כפתור צף */
+}
+
+.header-action-btn {
+  position: absolute;
+  background-color: transparent !important;
+  top: 120px;
+  left: 20px;  /* RTL - מאפסים לשמאל */
+  z-index: 2;
+  border: dashed 1px white;
+  padding: 0px;
+  margin: 0px;
+  width:120px;
+  height: 20px;
+}
+  .custom-table {
+    width: 90%;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    direction: rtl;
+    mat-header-row {
+
+      background-color:  rgb(12, 202, 193);
+      border-bottom: 2px solid rgb(12, 202, 193);
+    }
+    // כותרות
+    mat-header-cell {
+        
+       
+        color: white;
+         font-size: 1.2rem;
+        font-weight: bold; 
+        text-align: center;
+        letter-spacing: 0.5px;
+        padding: 16px;
+        text-transform: uppercase; // או תוריד אם אתה רוצה עברית תקינה
+    
+    }
+
+    mat-header-cell span {
+        display: inline-block;
+        width: 100%;
+        text-align: right; // עברית
+        font-family:"Rubik", "Segoe UI", sans-serif;// 'Heebo', sans-serif; // רק אם אתה רוצה פונט מודרני 
+    }
+
+    // תאים
+    mat-cell {
+        padding: 14px;
+        font-size: 14px;
+        color: #333;
+        border-bottom: 1px solid #e0f7fa;
+    }
+
+    // ריחוף שורה
+    mat-row:hover {
+        background-color: #e1f5fe; // כחול-אפרפר
+    }
+
+    // שורות
+    mat-row, mat-header-row {
+        display: flex;
+        align-items: center;
+    }
+
+    // תאים בכותרת ובגוף (כדי לשמור על גמישות רוחב)
+    mat-header-cell, mat-cell {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    // אייקונים לפי סטטוס
+    mat-icon {
+        color: rgb(12, 202, 193);  
+    }
+    
+}
+.delete{
+  background-color: transparent;
+}
+
+button[disabled]{
+   mat-icon {
+     color:gray;
+   }
+}
+
+.status-column  
+{ 
+    max-width:18% !important; 
+}
+.update-column  
+{ 
+    max-width:5% !important; 
+}
+.delete-column  
+{ 
+    max-width:5% !important; 
+}
+
+.column{
+    max-width:18%;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  min-width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border: 2px solid rgb(12, 202, 193); /* קווים חיצוניים */
+}
+
+.styled-table thead {
+  background-color: rgb(12, 202, 193);  
+  color: #333;
+}
+
+.styled-table th,
+.styled-table td {
+  text-align: center;
+  padding: 16px 20px;
+  border: 1px solid #ddd; /* קווים פנימיים בין עמודות ושורות */
+  word-break: break-word;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* אפור בהיר לסירוגין */
+}
+
+.styled-table tbody tr:hover {
+  background-color: rgb(12, 202, 193);  
+  transition: background-color 0.3s ease;
+}
+
+/* התאמה למובייל */
+@media (max-width: 768px) {
+  .styled-table {
+    font-size: 0.9rem;
+    min-width: unset;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 12px;
+  }
+}
+
+
+}

@@ -1,0 +1,17 @@
+@if(user){
+    <header class="header">
+
+    <div class="info-box">
+        <div class="one-row">
+               <p [innerText]="user.userName"></p>
+            </div>
+            <div class="one-row">
+                <p [innerText]="user.email"></p>
+            </div>
+            <!-- <div class="one-row">
+                <p [innerText]="user.phone"></p>
+            </div> -->
+        
+    </div>
+    </header>
+}

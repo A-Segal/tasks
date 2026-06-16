@@ -1,0 +1,29 @@
+:host{
+    .header {
+      margin-top: 5px;
+      margin-left: 1090px;
+      padding: 2px;
+      border: 1px solid #ddd;
+      color: rgb(25, 102, 165);
+      border-radius: 20px;
+      min-width: 100px;
+      direction: rtl;
+      text-align: center;
+    }
+
+
+.one-row{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  p{
+     text-align: center;
+     margin: 0px;
+     padding: 0px; 
+     margin-bottom: 2px;
+  }
+}
+
+}
+
+

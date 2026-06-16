@@ -1,0 +1,47 @@
+<!-- כפתור צ'אט צף -->
+<button
+  mat-fab
+  color="primary"
+  class="chat-button"
+  *ngIf="!open"
+  (click)="openChat()"
+>
+  <mat-icon>chat</mat-icon>
+</button>
+
+<!-- חלונית הצ'אט -->
+<mat-card class="chat-box" *ngIf="open" [ngStyle]="num | randomColor: 'border':5">
+  <mat-card-header>
+    <div class="chat-header">
+      <span>צ׳אט תמיכה</span>
+      <button mat-icon-button (click)="closeChat()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content class="chat-content">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender" >
+      <div [innerText]="msg.sender" 
+      [ngStyle]="num | randomColor: 'color'"></div>
+      <div id="chat-message" class="chat-message" 
+       [innerHTML]="msg.text| chatMessage"
+       [ngStyle]="num | randomColor: 'border':1"></div> 
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions class="chat-input">
+    <mat-form-field appearance="outline" class="input-field">
+      <input
+        matInput
+        placeholder="הקלד הודעה..."
+        [(ngModel)]="input"
+        (keydown.enter)="send()"
+      />
+    </mat-form-field>
+    <button mat-icon-button color="primary" (click)="send()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
+

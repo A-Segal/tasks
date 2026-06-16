@@ -1,0 +1,34 @@
+<form [formGroup]="userForm"  class="user-form">
+  <label> שם משתמש
+    <span  class="empty"></span>
+    <input type="text" formControlName="userName" placeholder="הכנס שם משתמש" />
+  </label>
+
+  <label>
+    טלפון
+    <input type="text" formControlName="phone"
+     placeholder="הכנס מספר טלפון"/>
+  </label>
+
+  <label>
+    אמייל
+    <input type="text" formControlName="email" placeholder="הכנס מייל" />
+  </label>
+
+    <label>
+    סיסמא
+    <input type="text" formControlName="password" placeholder="הכנס סיסמא" />
+  </label>
+
+   <label>בחר תפקיד:</label>
+
+        <select formControlName="roleId">
+            <option *ngFor="let role of availableRoles" [value]="role.id">{{ role.name }}</option>
+        </select>
+   <div class="buttons">
+    <button [disabled]="userForm.invalid" (click)="save()" 
+    [innerText]="'שמור'"></button>
+    
+    <button  (click)="cancel()">בטל</button>
+  </div>
+</form>

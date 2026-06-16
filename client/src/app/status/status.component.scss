@@ -1,0 +1,21 @@
+:host{
+     font-family: "Rubik", "Segoe UI", sans-serif;//'Assistant', sans-serif;
+ 
+    .current{
+        color:green;
+        border: solid 1px orange;
+        border-radius: 50%;
+    }
+    .disabled{
+         color:gray;
+         pointer-events: none;
+         cursor: not-allowed;
+    }
+    label {
+        color: #004c70;
+        width: 200px !important;
+        display: flex;
+        font-weight: 500;
+    }
+     
+}

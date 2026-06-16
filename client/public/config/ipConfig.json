@@ -1,0 +1,4 @@
+{
+    "servicePath": "http://localhost:3030/",
+     "webSocketPath": "ws://localhost:3005/"
+}

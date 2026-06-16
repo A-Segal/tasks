@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>אודות האתר</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      אתר זה נכתב על ידי <strong>{{ developerName }}</strong>.
+    </p>   
+        <ul>
+            <li> בצד השרת נעשה שימוש ב־<strong>Node.js</strong></li>
+            <li> בצד הלקוח ב־<strong>Angular 19</strong></li>
+            <li>  DataBase ב־<strong>Sql Server</strong></li>
+        </ul> 
+        
+    <p>האתר משתמש בטכנולוגיות הבאות:</p>
+    <ul>
+       @for (tech of technologies; track tech) {
+            <li  [innerText]="tech">
+            </li>
+        }
+    </ul>
+      
+    
+    <mat-divider></mat-divider>
+   
+    <p class="clock">
+      🕒 השעה הנוכחית: <strong>{{ currentTime }}</strong>
+    </p>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,18 @@
+
+<div  class="longdiv">
+@for(onetask of taskslist;track onetask){
+    <app-task [task]="onetask">
+    
+        <mat-icon end>
+            {{onetask.status | statusicon}}
+         </mat-icon>
+    
+      
+    
+    
+   
+</app-task>
+}
+
+</div>
+

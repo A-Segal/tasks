@@ -1,0 +1,10 @@
+{
+    "APP_PORT":3030,
+    "WEB_SOCKET_PORT":3005,
+    "SQL_SERVER":"localhost",
+    "SQL_DBNAME":"TasksDB",
+    "SQL_USERNAME":"project",
+    "SQL_PASSWORD":"1234",
+    "INTERVAL": 6000
+
+}

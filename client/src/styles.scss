@@ -1,0 +1,45 @@
+.white-datepicker,
+.white-datepicker .mat-datepicker-content,
+.white-datepicker .mat-calendar,
+.white-datepicker .mat-calendar-header,
+.white-datepicker .mat-calendar-table-header,
+.white-datepicker .mat-calendar-body,
+.white-datepicker .mat-calendar-controls {
+  background-color: white !important;
+  color: black !important;
+}
+
+.white-datepicker {
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18) !important;
+  border-radius: 16px !important;
+  z-index: 1000 !important;
+}
+
+.white-datepicker .mat-calendar-table-header th,
+.white-datepicker .mat-calendar-body-cell,
+.white-datepicker .mat-calendar-body-label,
+.white-datepicker .mat-calendar-body-cell-content,
+.white-datepicker .mat-calendar-period-button,
+.white-datepicker .mat-calendar-next-button,
+.white-datepicker .mat-calendar-previous-button,
+.white-datepicker .mat-calendar-body-selected,
+.white-datepicker .mat-calendar-body-today {
+  color: black !important;
+  background: white !important;
+}
+
+.white-datepicker .mat-calendar-table-header th,
+.white-datepicker .mat-calendar-body-cell {
+  border-color: rgba(0,0,0,0.06) !important;
+}
+
+.mat-datepicker-toggle .mat-icon-button {
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+    
+
